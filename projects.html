@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projects: things I've built and things I want to build while learning web development.">
+  <title>Projects · Halime</title>
+  <style>
+    /* ---------- Colours (change these to restyle the whole page) ---------- */
+    /* Theme: "Sunset Pink" */
+    :root {
+      --bg: #fff5f9;
+      --surface: #ffffff;
+      --text: #1f1a24;
+      --muted: #6b5f70;
+      --border: #f3d9e6;
+      --accent: #c2255c;
+      --accent-2: #e8590c;
+      --accent-soft: #ffe3ef;
+      --accent-text: #ffffff;
+    }
+
+    /* Dark mode follows the visitor's system setting */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #17121a;
+        --surface: #221a26;
+        --text: #f3eaf0;
+        --muted: #b3a5b8;
+        --border: #3a2c40;
+        --accent: #ff6fa8;
+        --accent-2: #ffa94d;
+        --accent-soft: #3d1f30;
+        --accent-text: #1a0d14;
+      }
+    }
+
+    /* ---------- Base ---------- */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 2rem 1rem 3rem;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    /* ---------- Navigation menu (same on every page) ---------- */
+    .site-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .site-nav a {
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--muted);
+    }
+
+    .site-nav a:hover {
+      color: var(--text);
+      background: var(--accent-soft);
+    }
+
+    /* The page you're on is highlighted */
+    .site-nav a[aria-current="page"] {
+      color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    /* ---------- Header ---------- */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .avatar {
+      flex-shrink: 0;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent-text);
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.75rem;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .tagline {
+      margin: 0.25rem 0 0;
+      color: var(--muted);
+    }
+
+    .intro {
+      font-size: 1.1rem;
+    }
+
+    /* ---------- Sections ---------- */
+    h2 {
+      margin: 3rem 0 1rem;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    .projects {
+      display: grid;
+      gap: 0.75rem;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .projects li {
+      display: flex;
+      gap: 1rem;
+      align-items: baseline;
+      padding: 1rem 1.25rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .projects strong {
+      display: block;
+    }
+
+    .projects span {
+      color: var(--muted);
+    }
+
+    .num {
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Smaller screens: stack the header */
+    @media (max-width: 420px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Main">
+    <a href="index.html">Home</a>
+    <a href="projects.html" aria-current="page">Projects</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <header>
+    <div class="avatar" aria-hidden="true">HB</div>
+    <div>
+      <h1>Projects</h1>
+      <p class="tagline">What I've built so far, and what's next</p>
+    </div>
+  </header>
+
+  <main>
+    <p class="intro">
+      Every project here started as practice. Some are small, but each one
+      taught me something new about the terminal, HTML or CSS.
+    </p>
+
+    <section>
+      <h2>Finished</h2>
+      <ul class="projects">
+        <li>
+          <span class="num">01</span>
+          <div>
+            <strong><a href="about.html">About Me page</a></strong>
+            <span>My first web page, styled with CSS and a dark mode</span>
+          </div>
+        </li>
+        <li>
+          <span class="num">02</span>
+          <div>
+            <strong><a href="cheatsheet.md">Terminal cheat sheet</a></strong>
+            <span>A quick reference for 10 everyday shell commands (in Turkish)</span>
+          </div>
+        </li>
+        <li>
+          <span class="num">03</span>
+          <div>
+            <strong><a href="my-first-project/notes.md">Learning notes</a></strong>
+            <span>Daily "What I Learned Today" notes in Markdown</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Up next</h2>
+      <ul class="projects">
+        <li>
+          <span class="num">04</span>
+          <div>
+            <strong>Bigger portfolio</strong>
+            <span>A grown-up version of this site, with live project demos</span>
+          </div>
+        </li>
+        <li>
+          <span class="num">05</span>
+          <div>
+            <strong>To-do list app</strong>
+            <span>A to-do list that saves my tasks</span>
+          </div>
+        </li>
+        <li>
+          <span class="num">06</span>
+          <div>
+            <strong>Browser game</strong>
+            <span>A small game that runs in the browser</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    Built by hand with HTML &amp; CSS.
+  </footer>
+</body>
+</html>
